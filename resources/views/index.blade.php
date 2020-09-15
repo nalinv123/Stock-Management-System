@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ env('APP_NAME' ) }}</title>
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,7 +15,6 @@
     <body>
         <div id="app">
 			<v-app>
-				<!-- <example-component></example-component> -->
 				<router-view></router-view>
 			</v-app>
 		</div>

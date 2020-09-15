@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Config;
+use Carbon\Carbon;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +52,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+		if ($exception instanceof \Illuminate\Auth\AuthenticationException) {
+			$response = [
+				'respCode' => "05",
+				'respDesc' => Config::get('constant.respDesc.05'),
+				'data'    => null,
+				'respTimestamp' => Carbon::now()->toDateTimeString()
+			];
+
+			return response()->json($response, 401);
+		}
         return parent::render($request, $exception);
     }
 }
