@@ -12,17 +12,17 @@ const routes = [
 			{
 				path: '/',
 				name: 'Login',
-				component: () => import('../components/Login.vue')
+				component: () => import('../components/auth/Login.vue')
 			},
 			{
 				path: '/forgot_password',
 				name: 'Forgot Password',
-				component: () => import('../components/ForgotPassword.vue')
+				component: () => import('../components/auth/ForgotPassword.vue')
 			},
 			{
 				path: '/reset_password/:token/:email',
 				name: 'Reset Password',
-				component: () => import('../components/ResetPassword.vue')
+				component: () => import('../components/auth/ResetPassword.vue')
 			}
 		]
 	},
@@ -40,7 +40,7 @@ const routes = [
 	{
 		path: '*',
 		name: 'Not Found',
-		component: () => import('../components/NotFound')
+		component: () => import('../components/common/NotFound')
 	}
 ];
 

@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Sidebar from '../components/Sidebar';
-import Loader from '../components/Loader';
-import Alert from '../components/Alert';
+import Header from '../components/system/Header';
+import Footer from '../components/system/Footer';
+import Sidebar from '../components/system/Sidebar';
+import Loader from '../components/common/Loader';
+import Alert from '../components/common/Alert';
 
 export default {
 	name: 'Home',

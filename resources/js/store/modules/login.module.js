@@ -46,7 +46,7 @@ const actions = {
 						dispatch('alertModule/showFailure', alert, { root: true });
 					} else {
 						const alert = {
-							message: err.response.data.message
+							message: err.response.data.respDesc
 						}
 						sessionStorage.clear();
 						dispatch('alertModule/showFailure', alert, { root: true });
@@ -82,7 +82,7 @@ const actions = {
 					dispatch('alertModule/showFailure', alert, { root: true });
 				} else {
 					const alert = {
-						message: err.response.data.message
+						message: err.response.data.respDesc
 					}
 					sessionStorage.clear();
 					dispatch('alertModule/showFailure', alert, { root: true });
@@ -121,7 +121,7 @@ const actions = {
 					dispatch('alertModule/showFailure', alert, { root: true });
 				} else {
 					const alert = {
-						message: err.response.data.message
+						message: err.response.data.respDesc
 					}
 					sessionStorage.clear();
 					dispatch('alertModule/showFailure', alert, { root: true });
@@ -160,7 +160,7 @@ const actions = {
 					dispatch('alertModule/showFailure', alert, { root: true });
 				} else {
 					const alert = {
-						message: err.response.data.message
+						message: err.response.data.respDesc
 					}
 					sessionStorage.clear();
 					dispatch('alertModule/showFailure', alert, { root: true });
