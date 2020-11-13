@@ -6,7 +6,12 @@
 			<v-container fluid>
 				<Loader />
 				<Alert />
-				<router-view></router-view>
+				<div class="header">
+					<h1>{{ getPageTitle }}</h1>
+				</div>
+				<div class="content">
+					<router-view></router-view>
+				</div>
 			</v-container>
 		</v-main>
 		<Footer />
@@ -36,6 +41,20 @@ export default {
 		messageSidebar(message) {
 			this.showMenu = message;
 		}
+	},
+	computed: {
+		getPageTitle() {
+			return this.$route.name;
+		}
 	}
 };
 </script>
+
+<style scoped>
+.header {
+	padding: 15px 15px 15px 15px;
+}
+.content {
+	padding: 15px 15px 15px 15px;
+}
+</style>

@@ -31,6 +31,7 @@ import vuetify from './plugins/vuetify';
 import router from './router';
 import store from './store';
 import Vuelidate from 'vuelidate';
+import { initSession } from './helper/sessionManager';
 
 Vue.use(Vuelidate);
 
@@ -39,4 +40,7 @@ const app = new Vue({
 	vuetify,
 	router,
 	store,
+	mounted() {
+		initSession();
+	}
 });

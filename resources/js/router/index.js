@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../pages/Login';
+import Home from '../pages/Home';
 
 Vue.use(VueRouter);
 
@@ -28,25 +29,61 @@ const routes = [
 	},
 	{
 		path: '/dashboard',
-		component: () => import('../pages/Home'),
+		component: Home,
 		children: [
 			{
 				path: '/',
 				name: 'Dashboard',
-				component: () => import('../components/Dashboard')
-			}
+				component: () => import('../components/Dashboard.vue')
+			},
+			{
+				path: '/category',
+				name: 'Category',
+				component: () => import('../components/category/Category.vue')
+			},
+			{
+				path: '/category/add',
+				name: 'Add Category',
+				component: () => import('../components/category/Add.vue')
+			},
+			{
+				path: '/category/edit/:id',
+				name: 'Edit Category',
+				props: true,
+				component: () => import('../components/category/Add.vue')
+			},
+			{
+				path: '/products',
+				name: 'Product',
+				component: () => import('../components/product/Product.vue')
+			},
+			{
+				path: '/orders',
+				name: 'Order',
+				component: () => import('../components/purchase/Orders.vue')
+			},
+			{
+				path: '/view_stock',
+				name: 'View Stock',
+				component: () => import('../components/ViewStock.vue')
+			},
+			{
+				path: '/reports',
+				name: 'Invoice / Report',
+				component: () => import('../components/InvoiceReport.vue')
+			},
 		]
 	},
 	{
 		path: '*',
 		name: 'Not Found',
-		component: () => import('../components/common/NotFound')
+		component: () => import('../components/common/NotFound.vue')
 	}
 ];
 
 const router = new VueRouter({
 	mode: 'history',
-	base: process.env.BASE_URL,
+	// base: window.location.pathname, // process.env.BASE_URL,
 	routes
 });
 

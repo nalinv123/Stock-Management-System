@@ -27,6 +27,7 @@
         "@mdi/font": "^5.5.55",
         "@mdi/js": "^5.5.55",
         "crypto-js": "^4.0.0",
+        "date-fns": "^2.16.1",
         "vue-router": "^3.4.3",
         "vuelidate": "^0.7.5",
         "vuetify": "^2.3.10",

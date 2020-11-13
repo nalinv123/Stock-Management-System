@@ -1,11 +1,12 @@
-import { forgotPasswordUrl, loginUrl, logoutUrl, resetPasswordUrl } from '../config/constant';
+import { forgotPasswordUrl, loginUrl, logoutUrl, refreshTokenUrl, resetPasswordUrl } from '../config/constant';
 import { authHeader } from '../helper/authHeader';
 
 export const loginService = {
 	login,
 	logout,
 	forgotPassword,
-	resetPassword
+	resetPassword,
+	refreshToken
 };
 
 function login(userInput) {
@@ -66,6 +67,21 @@ function resetPassword(userInput) {
 			}
 		},
 		err => {
+			throw err;
+		}
+	)
+}
+
+function refreshToken() {
+	return window.axios.post(refreshTokenUrl)
+	.then(
+		user => {
+			if (user !== undefined && user.data !== undefined) {
+				return user.data;
+			}
+		},
+		err => {
+			// console.log('error ' + err);
 			throw err;
 		}
 	)

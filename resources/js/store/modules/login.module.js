@@ -1,3 +1,4 @@
+import { addSeconds } from 'date-fns';
 import { AES } from '../../helper/encryption';
 import router from '../../router';
 import { loginService } from '../../service/login.service';
@@ -23,6 +24,7 @@ const actions = {
 					if (user.respCode === '00') {
 						commit('loginSuccess', user);
 						dispatch('loaderModule/hideLoader', null, { root: true });
+						user.data.expiry_date = addSeconds(new Date(), user.data.expires_in);
 						const data = JSON.stringify(user.data);
 						sessionStorage.setItem('user', AES.encrypt(data));
 						router.push('/dashboard');
@@ -167,6 +169,48 @@ const actions = {
 				}
 			}
 		)
+	},
+	refreshToken({ dispatch, commit }, userInput) {
+		commit('loginRequest', userInput );
+		dispatch('loaderModule/showLoader', null, { root: true });
+
+		loginService.refreshToken()
+			.then(
+				user => {
+					if (user.respCode === '00') {
+						commit('loginSuccess', user);
+						dispatch('loaderModule/hideLoader', null, { root: true });
+						user.data.expiry_date = addSeconds(new Date(), user.data.expires_in);
+						const data = JSON.stringify(user.data);
+						sessionStorage.setItem('user', AES.encrypt(data));
+						router.push('/dashboard');
+					} else {
+						commit('loginFailure');
+						dispatch('loaderModule/hideLoader', null, { root: true });
+						const alert = {
+							message: user.respDesc
+						};
+						dispatch('alertModule/showFailure', alert, { root: true });
+					}
+				}
+			).catch(
+				err => {
+					dispatch('loaderModule/hideLoader', null, { root: true })
+					if (err.response.status === 500) {
+						const alert = {
+							message: "Something went wrong. Please try again later."
+						}
+						sessionStorage.clear();
+						dispatch('alertModule/showFailure', alert, { root: true });
+					} else {
+						const alert = {
+							message: err.response.data.respDesc
+						}
+						sessionStorage.clear();
+						dispatch('alertModule/showFailure', alert, { root: true });
+					}
+				}
+			);
 	}
 };
 
@@ -189,9 +233,14 @@ const mutations = {
 	}
 };
 
+const getters = {
+	getUser: state => state
+}
+
 export const loginModule = {
 	namespaced: true,
 	state,
 	actions,
-	mutations
+	mutations,
+	getters
 };

@@ -32,3 +32,13 @@ Route::group([
 		Route::post('logout', 'AuthController@logout');
 	});
 });
+
+Route::group([
+	'prefix' => 'category',
+	'middleware' => ['auth:api']
+], function () {
+	Route::post('add', 'CategoryController@add');
+	Route::post('edit', 'CategoryController@edit');
+	Route::get('read', 'CategoryController@read');
+	Route::post('remove', 'CategoryController@remove');
+});
