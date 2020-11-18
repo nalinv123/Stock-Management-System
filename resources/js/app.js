@@ -31,7 +31,7 @@ import vuetify from './plugins/vuetify';
 import router from './router';
 import store from './store';
 import Vuelidate from 'vuelidate';
-import { initSession } from './helper/sessionManager';
+import { axiosInterceptor } from './helper/axiosInterceptor';
 
 Vue.use(Vuelidate);
 
@@ -41,6 +41,6 @@ const app = new Vue({
 	router,
 	store,
 	mounted() {
-		initSession();
+		axiosInterceptor();
 	}
 });
