@@ -71,6 +71,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AddProduct",
@@ -82,7 +88,7 @@ __webpack_require__.r(__webpack_exports__);
       categoryId: ""
     };
   },
-  props: ['item'],
+  props: ["item"],
   validations: {
     name: {
       required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
@@ -159,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
           long_description: this.longDesc,
           category_id: this.categoryId
         };
-        this.$store.dispatch('productModule/edit', userInput);
+        this.$store.dispatch("productModule/edit", userInput);
       } else {
         var _userInput = {
           name: this.name,
@@ -167,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
           long_description: this.longDesc,
           category_id: this.categoryId
         };
-        this.$store.dispatch('productModule/add', _userInput);
+        this.$store.dispatch("productModule/add", _userInput);
       }
     }
   }
@@ -210,7 +216,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n        Go Back\n      ")]
+            [_vm._v("\n            Go Back\n        ")]
           ),
           _vm._v(" "),
           _c("v-divider", {
@@ -229,7 +235,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n        Save\n      ")]
+            [_vm._v("\n            Save\n        ")]
           )
         ],
         1

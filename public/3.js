@@ -66,14 +66,13 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     getData: function getData() {
       // if (this.$store.state.categoryModule.categories) {
-      this.data = this.$store.state.categoryModule.categories; // }
-
-      return this.data;
+      return this.$store.state.categoryModule.categories; // }
+      // return this.data;
     }
   },
   methods: {
     initialize: function initialize() {
-      this.$store.dispatch('categoryModule/read');
+      this.$store.dispatch("categoryModule/read");
       this.loading = false;
     }
   }
@@ -91,6 +90,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/js */ "./node_modules/@mdi/js/mdi.js");
+//
+//
+//
+//
 //
 //
 //
@@ -180,7 +183,7 @@ __webpack_require__.r(__webpack_exports__);
     editItem: function editItem(item) {
       if (this.$props.component === 0) {
         this.$router.push({
-          name: 'Edit Category',
+          name: "Edit Category",
           params: {
             id: item.id,
             item: item
@@ -188,7 +191,7 @@ __webpack_require__.r(__webpack_exports__);
         });
       } else if (this.$props.component === 1) {
         this.$router.push({
-          name: 'Edit Product',
+          name: "Edit Product",
           params: {
             id: item.id,
             item: item
@@ -358,7 +361,9 @@ var render = function() {
                     "v-card",
                     [
                       _c("v-card-title", { staticClass: "headline" }, [
-                        _vm._v("Are you sure you want to delete this item?")
+                        _vm._v(
+                          "Are you sure you want to delete this\n                    item?"
+                        )
                       ]),
                       _vm._v(" "),
                       _c(

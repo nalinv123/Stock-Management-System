@@ -73,23 +73,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -98,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Login',
+  name: "Login",
   components: {
     Loader: _common_Loader__WEBPACK_IMPORTED_MODULE_2__["default"],
     Alert: _common_Alert__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -112,8 +95,8 @@ __webpack_require__.r(__webpack_exports__);
         mdiEyeOff: _mdi_js__WEBPACK_IMPORTED_MODULE_0__["mdiEyeOff"]
       },
       show: false,
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
   },
   validations: {
@@ -129,14 +112,14 @@ __webpack_require__.r(__webpack_exports__);
     emailErrors: function emailErrors() {
       var error = [];
       if (!this.$v.email.$dirty) return error;
-      !this.$v.email.required && error.push('Email is required');
-      !this.$v.email.email && error.push('Please enter valid e-mail address.');
+      !this.$v.email.required && error.push("Email is required");
+      !this.$v.email.email && error.push("Please enter valid e-mail address.");
       return error;
     },
     passwordErrors: function passwordErrors() {
       var error = [];
       if (!this.$v.password.$dirty) return error;
-      !this.$v.password.required && error.push('Password is required');
+      !this.$v.password.required && error.push("Password is required");
       return error;
     }
   },
@@ -146,7 +129,7 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email,
         password: this.password
       };
-      this.$store.dispatch('loginModule/login', userInput);
+      this.$store.dispatch("loginModule/login", userInput);
     }
   }
 });
@@ -285,7 +268,11 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("\n              Login\n            ")]
+                        [
+                          _vm._v(
+                            "\n                        Login\n                    "
+                          )
+                        ]
                       )
                     ],
                     1
@@ -296,7 +283,7 @@ var render = function() {
                     { attrs: { to: "/forgot_password" } },
                     [
                       _c("v-btn", { attrs: { text: "", color: "primary" } }, [
-                        _vm._v("\n              Forgot Password?\n            ")
+                        _vm._v(" Forgot Password? ")
                       ])
                     ],
                     1

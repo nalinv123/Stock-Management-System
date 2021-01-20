@@ -1,9 +1,9 @@
 <template>
-	<h1>Invoice / Report</h1>
+    <h1>Invoice / Report</h1>
 </template>
 
 <script>
 export default {
-	name: 'InvoiceReport'
-}
+    name: "InvoiceReport",
+};
 </script>

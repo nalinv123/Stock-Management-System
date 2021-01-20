@@ -88,17 +88,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -107,7 +96,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ResetPassword',
+  name: "ResetPassword",
   components: {
     Loader: _common_Loader__WEBPACK_IMPORTED_MODULE_2__["default"],
     Alert: _common_Alert__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -121,10 +110,10 @@ __webpack_require__.r(__webpack_exports__);
         mdiEyeOff: _mdi_js__WEBPACK_IMPORTED_MODULE_0__["mdiEyeOff"]
       },
       show: false,
-      email: '',
-      password: '',
-      confirmPassword: '',
-      token: ''
+      email: "",
+      password: "",
+      confirmPassword: "",
+      token: ""
     };
   },
   created: function created() {
@@ -139,27 +128,27 @@ __webpack_require__.r(__webpack_exports__);
       required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
     },
     confirmPassword: {
-      sameAsPassword: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["sameAs"])('password')
+      sameAsPassword: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["sameAs"])("password")
     }
   },
   computed: {
     emailErrors: function emailErrors() {
       var error = [];
       if (!this.$v.email.$dirty) return error;
-      !this.$v.email.required && error.push('Email is required');
-      !this.$v.email.email && error.push('Please enter valid e-mail address.');
+      !this.$v.email.required && error.push("Email is required");
+      !this.$v.email.email && error.push("Please enter valid e-mail address.");
       return error;
     },
     passwordErrors: function passwordErrors() {
       var error = [];
       if (!this.$v.password.$dirty) return error;
-      !this.$v.password.required && error.push('Password is required');
+      !this.$v.password.required && error.push("Password is required");
       return error;
     },
     confirmPasswordErrors: function confirmPasswordErrors() {
       var error = [];
       if (!this.$v.confirmPassword.$dirty) return error;
-      !this.$v.confirmPassword.sameAsPassword && error.push('Password should be same');
+      !this.$v.confirmPassword.sameAsPassword && error.push("Password should be same");
       return error;
     }
   },
@@ -175,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
         password_confirmation: this.confirmPassword,
         token: this.token
       };
-      this.$store.dispatch('loginModule/resetPassword', userInput);
+      this.$store.dispatch("loginModule/resetPassword", userInput);
     }
   }
 });
@@ -346,7 +335,11 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("\n              Login\n            ")]
+                        [
+                          _vm._v(
+                            "\n                        Login\n                    "
+                          )
+                        ]
                       )
                     ],
                     1
@@ -357,7 +350,7 @@ var render = function() {
                     { attrs: { to: "/" } },
                     [
                       _c("v-btn", { attrs: { text: "", color: "primary" } }, [
-                        _vm._v("\n              Back to Sign In?\n            ")
+                        _vm._v(" Back to Sign In? ")
                       ])
                     ],
                     1

@@ -33,16 +33,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'NotFound'
+  name: "NotFound"
 });
 
 /***/ }),
@@ -84,12 +76,12 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "display-3 mt-5" }, [
-                        _vm._v("\n            Page not found.\n          ")
+                        _vm._v("Page not found.")
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "grey--text lighten-5" }, [
                         _vm._v(
-                          "\n            The page you are trying to get to never existed in this reality,\n            or has migrated to a parallel universe.\n          "
+                          "\n                        The page you are trying to get to never existed in\n                        this reality, or has migrated to a parallel\n                        universe.\n                    "
                         )
                       ]),
                       _vm._v(" "),
@@ -98,7 +90,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("br"),
                         _vm._v(
-                          "Try going back to home page and repeating your action. Or,\n            contact helpdesk for support.\n          "
+                          "Try going back to home page and repeating your\n                        action. Or, contact helpdesk for support.\n                    "
                         )
                       ])
                     ]

@@ -1,11 +1,10 @@
 <template>
-  <router-view />
+    <router-view />
 </template>
 
 <script>
 export default {
-	name: 'LoginPage',
-	components: {
-	}
+    name: "LoginPage",
+    components: {},
 };
 </script>

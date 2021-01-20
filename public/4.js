@@ -54,6 +54,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Table",
@@ -99,7 +103,7 @@ __webpack_require__.r(__webpack_exports__);
     editItem: function editItem(item) {
       if (this.$props.component === 0) {
         this.$router.push({
-          name: 'Edit Category',
+          name: "Edit Category",
           params: {
             id: item.id,
             item: item
@@ -107,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
         });
       } else if (this.$props.component === 1) {
         this.$router.push({
-          name: 'Edit Product',
+          name: "Edit Product",
           params: {
             id: item.id,
             item: item
@@ -182,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Product',
+  name: "Product",
   components: {
     Table: _common_Table__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -219,14 +223,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     getData: function getData() {
-      this.data = this.$store.state.productModule.products;
-      return this.data;
+      return this.$store.state.productModule.products; // return this.data;
     }
   },
   methods: {
     initialize: function initialize() {
-      this.$store.dispatch('categoryModule/read');
-      this.$store.dispatch('productModule/read');
+      this.$store.dispatch("categoryModule/read");
+      this.$store.dispatch("productModule/read");
       this.loading = false;
     }
   }
@@ -285,7 +288,9 @@ var render = function() {
                     "v-card",
                     [
                       _c("v-card-title", { staticClass: "headline" }, [
-                        _vm._v("Are you sure you want to delete this item?")
+                        _vm._v(
+                          "Are you sure you want to delete this\n                    item?"
+                        )
                       ]),
                       _vm._v(" "),
                       _c(

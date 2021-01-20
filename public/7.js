@@ -63,23 +63,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ForgotPassword',
+  name: "ForgotPassword",
   components: {
     Loader: _common_Loader__WEBPACK_IMPORTED_MODULE_2__["default"],
     Alert: _common_Alert__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -89,7 +78,7 @@ __webpack_require__.r(__webpack_exports__);
       icons: {
         mdiEmail: _mdi_js__WEBPACK_IMPORTED_MODULE_0__["mdiEmail"]
       },
-      email: ''
+      email: ""
     };
   },
   validations: {
@@ -102,8 +91,8 @@ __webpack_require__.r(__webpack_exports__);
     emailErrors: function emailErrors() {
       var error = [];
       if (!this.$v.email.$dirty) return error;
-      !this.$v.email.required && error.push('Email is required');
-      !this.$v.email.email && error.push('Please enter valid e-mail address.');
+      !this.$v.email.required && error.push("Email is required");
+      !this.$v.email.email && error.push("Please enter valid e-mail address.");
       return error;
     }
   },
@@ -112,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
       var userInput = {
         email: this.email
       };
-      this.$store.dispatch('loginModule/forgotPassword', userInput);
+      this.$store.dispatch("loginModule/forgotPassword", userInput);
     }
   }
 });
@@ -171,7 +160,7 @@ var render = function() {
                       _c("div", [
                         _c("p", [
                           _vm._v(
-                            "Lost your password? Please enter your email address. You will receive a link to create a new password via email."
+                            "\n                            Lost your password? Please enter your email\n                            address. You will receive a link to create a new\n                            password via email.\n                        "
                           )
                         ])
                       ]),
@@ -228,7 +217,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n              Request new password.\n            "
+                            "\n                        Request new password.\n                    "
                           )
                         ]
                       )
@@ -241,7 +230,7 @@ var render = function() {
                     { attrs: { to: "/" } },
                     [
                       _c("v-btn", { attrs: { text: "", color: "primary" } }, [
-                        _vm._v("\n              Back to Sign In.\n            ")
+                        _vm._v(" Back to Sign In. ")
                       ])
                     ],
                     1

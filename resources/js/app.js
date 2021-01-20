@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,20 +27,20 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import vuetify from './plugins/vuetify';
-import router from './router';
-import store from './store';
-import Vuelidate from 'vuelidate';
-import { axiosInterceptor } from './helper/axiosInterceptor';
+import vuetify from "./plugins/vuetify";
+import router from "./router";
+import store from "./store";
+import Vuelidate from "vuelidate";
+import { axiosInterceptor } from "./helper/axiosInterceptor";
 
 Vue.use(Vuelidate);
 
 const app = new Vue({
-	el: '#app',
-	vuetify,
-	router,
-	store,
-	mounted() {
-		axiosInterceptor();
-	}
+    el: "#app",
+    vuetify,
+    router,
+    store,
+    mounted() {
+        axiosInterceptor();
+    },
 });
