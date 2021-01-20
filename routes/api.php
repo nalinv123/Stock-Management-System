@@ -42,3 +42,13 @@ Route::group([
 	Route::get('read', 'CategoryController@read');
 	Route::post('remove', 'CategoryController@remove');
 });
+
+Route::group([
+	'prefix' => 'product',
+	'middleware' => ['auth:api']
+], function () {
+	Route::post('add', 'ProductController@add');
+	Route::post('edit', 'ProductController@edit');
+	Route::get('read', 'ProductController@read');
+	Route::post('remove', 'ProductController@remove');
+});

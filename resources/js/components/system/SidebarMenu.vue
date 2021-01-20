@@ -18,10 +18,16 @@
 				<v-list-item-title>Products</v-list-item-title>
 			</v-list-item>
 		</router-link>
-		<router-link to="/orders">
-			<v-list-item link :class="[currentPath.includes('orders') ? activeClass : '']">
+		<router-link to="/purchase">
+			<v-list-item link :class="[currentPath.includes('purchase') ? activeClass : '']">
 				<v-list-item-icon></v-list-item-icon>
-				<v-list-item-title>Purchase Order</v-list-item-title>
+				<v-list-item-title>Purchase</v-list-item-title>
+			</v-list-item>
+		</router-link>
+		<router-link to="/sales">
+			<v-list-item link :class="[currentPath.includes('sales') ? activeClass : '']">
+				<v-list-item-icon></v-list-item-icon>
+				<v-list-item-title>Sales</v-list-item-title>
 			</v-list-item>
 		</router-link>
 		<router-link to="/view_stock">

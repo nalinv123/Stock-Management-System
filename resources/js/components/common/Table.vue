@@ -30,7 +30,7 @@
         </v-card>
       </v-dialog>
     </template>
-    <template v-slot:item.actions="{ item }">
+    <template v-slot:[`item.actions`]="{ item }">
       <v-icon small class="mr-2" @click="editItem(item)">{{
         mdiPencil
       }}</v-icon>
@@ -86,6 +86,8 @@ export default {
     editItem(item) {
 			if (this.$props.component === 0) {
 				this.$router.push({ name: 'Edit Category', params: { id: item.id, item: item } });
+			} else if (this.$props.component === 1) {
+				this.$router.push({ name: 'Edit Product', params: { id: item.id, item: item } });
 			}
     },
     deleteItem(item) {
@@ -98,6 +100,11 @@ export default {
 					id: this.deleteItemId
 				};
 				this.$store.dispatch("categoryModule/remove", userInput);
+			} else if (this.$props.component === 1) {
+				let userInput = {
+					id: this.deleteItemId
+				};
+				this.$store.dispatch("productModule/remove", userInput);
 			}
       this.closeDelete();
     },

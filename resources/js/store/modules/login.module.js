@@ -183,7 +183,6 @@ const actions = {
 						user.data.expiry_date = addSeconds(new Date(), user.data.expires_in);
 						const data = JSON.stringify(user.data);
 						sessionStorage.setItem('user', AES.encrypt(data));
-						router.push('/dashboard');
 					} else {
 						commit('loginFailure');
 						dispatch('loaderModule/hideLoader', null, { root: true });

@@ -58,9 +58,25 @@ const routes = [
 				component: () => import('../components/product/Product.vue')
 			},
 			{
-				path: '/orders',
-				name: 'Order',
-				component: () => import('../components/purchase/Orders.vue')
+				path: '/product/add',
+				name: 'Add Product',
+				component: () => import('../components/product/Add.vue')
+			},
+			{
+				path: '/product/edit/:id',
+				name: 'Edit Product',
+				props: true,
+				component: () => import('../components/product/Add.vue')
+			},
+			{
+				path: '/purchase',
+				name: 'Purchase',
+				component: () => import('../components/purchase/Purchase.vue')
+			},
+			{
+				path: '/sales',
+				name: 'Sales',
+				component: () => import('../components/sales/Sales.vue')
 			},
 			{
 				path: '/view_stock',
